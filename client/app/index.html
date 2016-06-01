@@ -19,6 +19,35 @@
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
     <div class="container jumbotron" ng-controller="taskCtrl" >
+      <h2>Task List</h2>
+      <ul>
+        <li>Titulo1  -   Concluido   -  10/05/2016</li>
+        <li>Titulo2  -   Não Concluida  - 12/06/2016</li>
+        <li>Titulo3  -   Concluido -     20/05/2016</li>
+      </ul>
+
+      <input type="text" placeholder="Título" class="form-control">
+      <select class="form-control">
+				<option value="">Selecione uma status</option>
+			</select>
+      <div style="display:inline-block; min-height:290px;">
+        <uib-datepicker ng-model="datos.date" class="well well-sm" datepicker-options="options"></uib-datepicker>
+      </div>
+      <style>
+       .full button span {
+          background-color: limegreen;
+          border-radius: 32px;
+          color: black;
+        }
+      .partially button span {
+        background-color: orange;
+        border-radius: 32px;
+        color: black;
+      }
+      </style>
+      <div >
+      <br>
+      <button type="button" class="btn btn-default btn-primary">Adicionar task</button>
     </div>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -45,6 +74,7 @@
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
     <script src="bower_components/angular-touch/angular-touch.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 
