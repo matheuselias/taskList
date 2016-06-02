@@ -2,7 +2,12 @@
 
 angular.module('taskListApp')
   .controller('taskCtrl', function ($scope, taskFactory) {
-    $scope.tasks = [];
+    var init = function(){
+      $scope.tasks = {};
+      $scope.task = {
+          date: new Date()
+        };
+    }
 
     var getTasks = function(){
       taskFactory.query({id: ''},
@@ -18,7 +23,8 @@ angular.module('taskListApp')
       taskFactory.save({task: $scope.task},
         function(){
           getTasks();
-          $scope.task = "";
+          init();
+          $scope.taskForm.$setPristine();
         },
         function(data){
           alert('Ocorreu um problema ao adicionar a Task!');
@@ -33,7 +39,7 @@ angular.module('taskListApp')
                   getTasks();
               },
               function(data) {
-                  alert('Ocorreu um problema ao remover a task!');
+                  alert('Ocorreu um problema ao excluir a task!');
               }
           );
       }
@@ -42,7 +48,6 @@ angular.module('taskListApp')
     $scope.updateTask = function(task){
       taskFactory.update({id: task.id}, {task: task},
       function(){
-        
       },
       function(data){
         alert('Ocorreu um problema ao alterar o status da task!');
@@ -50,4 +55,5 @@ angular.module('taskListApp')
     };
 
     getTasks();
+    init();
   });
