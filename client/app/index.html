@@ -26,6 +26,7 @@
         <span>{{task.title}}</span>
         <span>{{task.status}}</span>
         <span>{{task.date | date:'dd/MM/yyyy'}}</span>
+        <a href="" ng-click="removeTask(task)"><span class="glyphicon glyphicon-remove"></span></a>
       </div>
 
       <form ng-submit="addTodo()" class="list-group-item">
