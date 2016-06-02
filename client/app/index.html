@@ -21,7 +21,7 @@
     <div class="container jumbotron" ng-controller="taskCtrl" >
       <h2>Task List</h2>
       <div ng-repeat="task in tasks">
-        <input type="checkbox" ng-model="task.status">
+        <input type="checkbox" ng-model="task.status" ng-change="updateTask(task)">
         <span>{{task.status ? "Concluída" : "Não concluída"}}</span>
         <span>{{task.title}}</span>
         <span>{{task.status}}</span>
