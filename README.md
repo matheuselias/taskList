@@ -22,4 +22,4 @@ Para os arquivos do front end estão na pasta './client'
 
 ## Deploy:
 
-* Deve executar Grunt build para que gere os arquivos na pasta './public' da aplicação.
+Deve executar Grunt build para que gere os arquivos na pasta './public' da aplicação.
